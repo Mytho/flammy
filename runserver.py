@@ -4,9 +4,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def template():
-    return render_template('template.html')
+    pages = []
+    for page in os.listdir('./templates/content/'):
+        pages.append(page.replace('.md', ''))
+    return render_template('template.html', pages=pages)
 
-@app.route('/<page>')
+@app.route('/page/<page>')
 def page(page):
     path = './templates/content/' + page + '.md'
     if (os.path.isfile(path)):

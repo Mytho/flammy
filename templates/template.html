@@ -10,8 +10,9 @@
 		<div id="page">
 			<div id="menu">
 				<ul>
-					<li><a href="/#!/">Home</a></li>
-					<li><a href="/#!/about">About</a></li>
+					{% for p in pages %}
+						<li><a href="/#!/{% print p %}">{% print p.capitalize() %}</a></li>
+					{% endfor %}
 				</ul>
 			</div>
 			<div id="content"></div>

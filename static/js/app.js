@@ -9,7 +9,7 @@ APP = {
 	controller : {
 		index : function(template){
 			APP.Spinner();
-			$.get(APP.base+template, function(html){
+			$.get(APP.base+"page/"+template, function(html){
 				$("#"+APP.elementId).html(html);
 			});
 		}
