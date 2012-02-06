@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+
 import markdown, os
 from flask import abort, Flask, render_template
 app = Flask(__name__)
